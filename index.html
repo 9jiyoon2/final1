@@ -7,13 +7,12 @@
   <link href="https://fonts.googleapis.com/css2?family=Smooch+Sans:wght@400;600&display=swap" rel="stylesheet" />
 
   <style>
-    @font-face {
-      font-family: 'NCS Radhiumz';
-      src: url('fonts/NCSRadhiumz.woff2') format('woff2'),
-           url('fonts/NCSRadhiumz.woff') format('woff');
-      font-weight: normal;
-      font-style: normal;
-    }
+@font-face {
+  font-family: 'NCS Radhiumz';
+  src: url('./NCS Radhiumz.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
   @font-face {
   font-family: 'NanumSquareNeoBold';
   src: url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareNeo/NanumSquareNeoTTF-cBd.eot);
@@ -57,7 +56,7 @@ html {
       }
     }
     h3 {
-  font-family: 'NCS Radhiumz', sans-serif;
+  font-family: 'NCS Radhiumz', sans-serif; /* 위에서 쓴 커스텀 폰트 */
   color: #d4ff4d;
   font-weight: 700;
   font-size: 1rem;
@@ -158,7 +157,7 @@ body {
   z-index: 10;
   cursor: pointer;
 
-
+  /* 🔥 초기 상태: 안 보이게 */
   opacity: 0;
   transform: translateY(30px);
 
@@ -198,7 +197,7 @@ body {
   box-shadow: 0 10px 20px rgba(0,0,0,0.15);
 }
 
-
+/* 이미지별 위치 (캡처 기반 좌표 근사치) */
 .img-1 {
   top: -270px;
   left: -140px;
@@ -215,7 +214,7 @@ body {
   transform: translateX(60px) rotate(10deg);
 }
 
-
+/* hover 시 등장 */
 .analemma-hover-area:hover .float-img {
   opacity: 1;
   transform: translateX(0) translateY(0) rotate(0deg);
@@ -313,7 +312,7 @@ margin: 250px 0;}
   margin: 0 auto;
   gap: 60px;
   padding: 0 198px;
-  flex-wrap: wrap; 
+  flex-wrap: wrap; /* 반응형 */
 }
 
 .quote-left img {
@@ -438,7 +437,105 @@ margin: 250px 0;}
   transform: translateY(0) scale(1);
 }
 
+
+
+
+.tech-section {
+  position: relative;
+  background: #000;
+  color: white;
+  padding: 150px 80px;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  flex-direction: column;
+}
+
+.tech-bg-overlay {
+  position: absolute;
+  inset: 0;
+  background: url('./img/19.png') no-repeat center center;
+  background-size: cover;
+  z-index: 1;
+}
+
+.tech-wrapper {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 1440px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.tech-label {
+  color: #d4ff4d;
+  font-family: 'NCS Radhiumz', sans-serif;
+  font-size: 1rem;
+  letter-spacing: 0.1em;
+  margin-bottom: 10px;
+}
+
+
+
+.tech-row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 60px;
+    margin: 0
+  flex-wrap: wrap;
+  width: 100%;
+  max-width: 1000px;
+}
+
+.tech-col {
+  flex: 1 1 45%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: left; 
+  text-align: left;  
+}
+
+.tech-col img {
+  width: 100%;
+  height: auto;
+  display: block;
+  box-shadow: 0 0 100px rgba(0, 0, 0, 0.6);
+  margin: 0;
+}
+
+.tech-col h4 {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+  font-family: 'NanumSquareNeoExtraBold';
+}
+
+.tech-col p {
+  font-size: 0.95rem;
+  line-height: 1.8;
+  font-family: 'NanumSquareNeoBold';
+}
+
+.slide-up {
+  opacity: 0;
+  transform: translateY(60px);
+  transition: opacity 1s ease, transform 1s ease;
+}
+
+.slide-up.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 </style>
+
 </head>
 <body>
   <div class="container">
@@ -446,7 +543,7 @@ margin: 250px 0;}
       <div class="logo">LOGO</div>
       <nav class="nav-links">
         <a href="#about">About</a>
-        <a href="#">How</a>
+        <a href="#how">How</a>
         <a href="#">Experience</a>
         <a href="#">More</a>
       </nav>
@@ -556,15 +653,64 @@ margin: 250px 0;}
     </div>
   </div>
 </section>
+
+
+
+<section class="tech-section" id="how">
+  <div class="tech-bg-overlay"></div>
+  <div class="tech-wrapper">
+    <div class="tech-header slide-up">
+      <div class="about-container">
+    <h3>02. SYSTEM</h3>
+    <h2 style="line-height: 1.5; margin-bottom: 120px;">이게 정말 가능해? <br>아날레마 타워의 기술 원리</h2>
+    </div>
+
+    <div class="tech-row slide-up">
+      <div class="tech-col">
+        <img src="./img/20.png" alt="기술 시스템 구성 이미지1">
+      </div>
+      <div class="tech-col">
+        <h4 style="font-size: 15px;">1. 우주 기반 지지 시스템</h4>
+        <p style="font-size: 12px;line-height: 2;"><br>Analemma Tower는 지구에 고정된 기반이 아닌,<br>지구 궤도를 도는 소행성에 고강도 케이블로 매달려 있는 구조이며,<br>이 소행성은 지구의 자전과 동기화된 궤도를 따라 움직입니다.</p>
+      </div>
+    </div>
+
+    <div class="tech-row slide-up">
+      <div class="tech-col">
+        <img src="./img/17.png" alt="기술 시스템 구성 이미지2">
+      </div>
+      <div class="tech-col">
+        <h4 style="font-size: 15px;">2. 타워의 궤도 이동과 위치 변화</h4>
+        <p style="font-size: 12px;line-height: 2;"><br>하루에 한 번 ‘8자 모양(Analemma)’의 궤적을 따라<br>지구 위를 이동합니다. 이로 인해 다양한 지역을 지나며,<br>하늘을 순환하는 이동형 타워입니다.</p>
+      </div>
+    </div>
+
+    <div class="tech-row slide-up">
+      <div class="tech-col">
+        <img src="./img/18.png" alt="기술 시스템 구성 이미지3">
+      </div>
+      <div class="tech-col">
+        <h4 style="font-size: 15px;">3. 자급자족형 에너지 및 자원 시스템</h4>
+        <p style="font-size: 12px;line-height: 2;"><br>타워는 우주까지 닿지 않아 태양광을 직접 받아 전기를 만들고,<br>공기 & 수분을 회수해 모든 자원을 자체적으로 확보합니다.<br>이 덕분에 외부 자원 없이도 자급자족이 가능합니다.</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+
+
 <script>
-  const observer = new IntersectionObserver(entries => {
+  // scene용 observer
+  const sceneObserver = new IntersectionObserver(entries => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
         const children = entry.target.querySelectorAll('.slide-up');
         children.forEach((el, index) => {
           setTimeout(() => {
             el.classList.add('active');
-          }, index * 150); // 각 요소에 딜레이 줘서 순차 애니메이션
+          }, index * 150);
         });
       }
     });
@@ -573,8 +719,23 @@ margin: 250px 0;}
   });
 
   document.querySelectorAll('.scene').forEach(section => {
-    observer.observe(section);
+    sceneObserver.observe(section);
   });
+
+  // tech-section용 observer (변수명 다르게!)
+ const techObserver = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('active');
+    }
+  });
+}, {
+  threshold: 0.3
+});
+
+document.querySelectorAll('.slide-up').forEach(section => {
+  techObserver.observe(section);
+});
 </script>
 
 </body>
